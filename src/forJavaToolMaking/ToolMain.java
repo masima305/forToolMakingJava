@@ -1,6 +1,6 @@
 package forJavaToolMaking;
 
-
+// utf-8ë³€í™˜....
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -11,75 +11,75 @@ import org.jsoup.select.Elements;
 
 public class ToolMain {
 
-	//µ¥ÀÌÅÍ Å©·Ñ¸µ ´ë»ó
+	//ë°ì´í„° í¬ë¡¤ë§ ëŒ€ìƒ
 	
-	//Á¾ÇÕÁ¤º¸
+	//ì¢…í•©ì •ë³´
 	static String ARTICLE_URL = "https://finance.naver.com/item/main.nhn?code=019170";
 	
-	//Á¾¸ñºĞ¼®
+	//ì¢…ëª©ë¶„ì„
 	//  https://finance.naver.com/item/coinfo.nhn?code=089010
 	
 	
 	
 	
-	//´ç±â ¼øÀÌÀÍ selector
+	//ë‹¹ê¸° ìˆœì´ìµ selector
 	static String [] netIncomeYear
 			= {
-					//3³âÀü
+					//3ë…„ì „
 					"#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(2)"
-					//2³âÀü
+					//2ë…„ì „
 					, "#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(3)"
-					//1³âÀü
+					//1ë…„ì „
 					, "#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(4)"
-					//¿¹»ó
+					//ì˜ˆìƒ
 					, "#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(5)"
 			};
 	
-	//´ç±â ¼øÀÌÀÍ selector
+	//ë‹¹ê¸° ìˆœì´ìµ selector
 	static String [] netIncomeQuarter
 			= {
-					//6ºĞ±âÀü
+					//6ë¶„ê¸°ì „
 					"#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(6)"
-					//5ºĞ±âÀü
+					//5ë¶„ê¸°ì „
 					, "#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(7)"
-					//4ºĞ±âÀü
+					//4ë¶„ê¸°ì „
 					, "#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(8)"
-					//3ºĞ±âÀü
+					//3ë¶„ê¸°ì „
 					, "#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(9)"
-					//2ºĞ±âÀü
+					//2ë¶„ê¸°ì „
 					, "#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(10)"
-					//1ºĞ±âÀü
+					//1ë¶„ê¸°ì „
 					, "#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(11)"
 			};
 	
-	//½ÃÃÑ
+	//ì‹œì´
 	static String marketCap = "#_market_sum";
 	
-	//PER±âÁØ¿ù
+	//PERê¸°ì¤€ì›”
 	static String perDate = "#tab_con1 > div:nth-child(5) > table > tbody:nth-child(2) > tr > th > span.date";
 	
-	//ÃßÁ¤PER
+	//ì¶”ì •PER
 	static String perCal = "#_per";
 	
-	//ÅõÀÚÀÇ°ß
+	//íˆ¬ìì˜ê²¬
 	static String invstOp = "#tab_con1 > div:nth-child(4) > table > tbody > tr:nth-child(1) > td > span.f_up > em";
 	
-	//¸ñÇ¥ÁÖ°¡
+	//ëª©í‘œì£¼ê°€
 	static String goalPrice = "#tab_con1 > div:nth-child(4) > table > tbody > tr:nth-child(1) > td > em";
 	
-	//µ¿ÀÏ¾÷Á¾ PER
+	//ë™ì¼ì—…ì¢… PER
 	static String sameDomainPer = "#tab_con1 > div:nth-child(6) > table > tbody > tr.strong > td > em";
 	
 	public static void main(String[] args) throws IOException {
 
-		//ÆäÀÌÁö ±Ü¾î¼­ °¡Áö°í¿È
+		//í˜ì´ì§€ ê¸ì–´ì„œ ê°€ì§€ê³ ì˜´
 		Document rawData = Jsoup.connect(ARTICLE_URL)
                 .timeout(5000)
                 .get();
 		
 		
 		Elements element = null;
-		//´ç±â ¼øÀÌÀÍ °¡Áö°í ¿À±â.	
+		//ë‹¹ê¸° ìˆœì´ìµ ê°€ì§€ê³  ì˜¤ê¸°.	
 		for (int i = 0; i < netIncomeQuarter.length; i++) {
 			element = rawData.select(netIncomeQuarter[i]);
 			System.out.println(element.text());
@@ -87,7 +87,7 @@ public class ToolMain {
 		element = rawData.select(marketCap);
 		System.out.println(element.text());
 			
-		//array·Î È®ÀÎÇÏ´Â°Ô ¸Â´Â°ÇÁö??
+		//arrayë¡œ í™•ì¸í•˜ëŠ”ê²Œ ë§ëŠ”ê±´ì§€??
 		//ArrayList<String> a  = (ArrayList<String>) element.eachText();
 		
 		//for.... 
